@@ -1,10 +1,13 @@
 import React from 'react';
+import Layout from './components/Layout/Layout';
 // import './App.css';
 
 function App() {
   return (
     <div>
-      TODO
+      <Layout>
+        <p>TODO</p>
+      </Layout>
     </div>
   );
 }
