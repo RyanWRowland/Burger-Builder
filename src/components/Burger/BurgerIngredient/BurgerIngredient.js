@@ -5,9 +5,10 @@ import styles from './BurgerIngredient.module.css';
 
 class BurgerIngredient extends Component {
   render() {
+    const { type } = this.props;
     let ingredient;
 
-    switch (this.props.type) {
+    switch (type) {
       case 'bread-bottom':
         ingredient = <div className={styles.BreadBottom} />;
         break;
