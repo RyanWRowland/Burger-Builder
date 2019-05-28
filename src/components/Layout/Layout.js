@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import Aux from "../../hoc/Aux";
-import styles from "./Layout.module.css";
+import Aux from '../../hoc/Aux';
+import styles from './Layout.module.css';
 
 const Layout = ({ children }) => {
   return (

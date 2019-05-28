@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Aux from "../../hoc/Aux";
-import Burger from "../../components/Burger/Burger";
+import React, { Component } from 'react';
+import Aux from '../../hoc/Aux';
+import Burger from '../../components/Burger/Burger';
 
 class BurgerBuilder extends Component {
   state = {
@@ -8,8 +8,8 @@ class BurgerBuilder extends Component {
       salad: 1,
       bacon: 1,
       cheese: 2,
-      meat: 2
-    }
+      meat: 2,
+    },
   };
 
   render() {
