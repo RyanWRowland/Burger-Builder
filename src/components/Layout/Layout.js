@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 import Aux from '../../hoc/Aux';
 import styles from './Layout.module.css';
+import Toolbar from '../Navigation/Toolbar/Toolbar';
 
 const Layout = ({ children }) => (
   <Aux>
-    <div>Toolbar, SideDrawer, Backdrop</div>
+    <Toolbar />
     <main className={styles.Content}>{children}</main>
   </Aux>
 );
