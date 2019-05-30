@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Backdrop.module.css';
 
-const Backdrop = ({ show, close }) =>
+const Backdrop = ({ show, cancel }) =>
   show ? (
-    <div className={styles.Backdrop} onClick={close} role="presentation" />
+    <div className={styles.Backdrop} onClick={cancel} role="presentation" />
   ) : null;
 
 Backdrop.propTypes = {
   show: PropTypes.bool.isRequired,
-  close: PropTypes.func.isRequired,
+  cancel: PropTypes.func.isRequired,
 };
 
 export default Backdrop;

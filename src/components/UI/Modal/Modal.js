@@ -4,9 +4,9 @@ import styles from './Modal.module.css';
 import Aux from '../../../hoc/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
-const Modal = ({ children, show, close }) => (
+const Modal = ({ children, show, cancel }) => (
   <Aux>
-    <Backdrop show={show} close={close} />
+    <Backdrop show={show} cancel={cancel} />
     <div
       className={styles.Modal}
       style={{
@@ -22,7 +22,7 @@ const Modal = ({ children, show, close }) => (
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   show: PropTypes.bool.isRequired,
-  close: PropTypes.func.isRequired,
+  cancel: PropTypes.func.isRequired,
 };
 
 export default Modal;
