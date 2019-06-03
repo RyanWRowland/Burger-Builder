@@ -20,7 +20,8 @@ const Modal = ({ children, show, cancel }) => (
 );
 
 const shouldNotUpdate = (prevProps, nextProps) =>
-  nextProps.show === prevProps.show;
+  nextProps.show === prevProps.show &&
+  nextProps.children === prevProps.children;
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
