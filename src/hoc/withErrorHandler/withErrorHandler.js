@@ -4,11 +4,11 @@ import Aux from '../Aux/Aux';
 
 const withErrorHandler = (WrappedComponent, Axios) =>
   class WithErrorHandler extends Component {
-    state = {
-      error: null,
-    };
-
-    componentDidMount() {
+    constructor(props) {
+      super(props);
+      this.state = {
+        error: null,
+      };
       Axios.interceptors.request.use(req => {
         this.setState({ error: null });
         return req;
