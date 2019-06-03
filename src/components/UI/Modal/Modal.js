@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Modal.module.css';
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
 const Modal = ({ children, show, cancel }) => (
@@ -19,10 +19,13 @@ const Modal = ({ children, show, cancel }) => (
   </Aux>
 );
 
+const shouldNotUpdate = (prevProps, nextProps) =>
+  nextProps.show === prevProps.show;
+
 Modal.propTypes = {
   children: PropTypes.node.isRequired,
   show: PropTypes.bool.isRequired,
   cancel: PropTypes.func.isRequired,
 };
 
-export default Modal;
+export default React.memo(Modal, shouldNotUpdate);

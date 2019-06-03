@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
 import Button from '../../UI/Button/Button';
 
 const OrderSummary = ({ ingredients, price, cancel, checkout }) => {
+  // React.useEffect(() => console.log('[OrderSummary] updated or mounted'));
+
   const ingredientsSummary = Object.entries(ingredients).map(
     ([ingredient, quantity]) => (
       <li key={ingredient}>
