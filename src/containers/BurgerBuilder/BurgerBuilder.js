@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Axios from '../../axios-orders';
+
 import Aux from '../../hoc/Aux/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
-import Axios from '../../axios-orders';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 const INGREDIENT_PRICES = {
   lettuce: 0.5,
@@ -118,7 +120,7 @@ class BurgerBuilder extends Component {
 
     return (
       <Aux>
-        <Modal show={purchasing} cancel={this.purchasingCancelHandler}>
+        <Modal show={purchasing} close={this.purchasingCancelHandler}>
           {loading ? (
             <Spinner />
           ) : (
@@ -144,4 +146,4 @@ class BurgerBuilder extends Component {
   }
 }
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, Axios);

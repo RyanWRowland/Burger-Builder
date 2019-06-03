@@ -4,9 +4,9 @@ import styles from './Modal.module.css';
 import Aux from '../../../hoc/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
-const Modal = ({ children, show, cancel }) => (
+const Modal = ({ children, show, close }) => (
   <Aux>
-    <Backdrop show={show} click={cancel} />
+    <Backdrop show={show} click={close} />
     <div
       className={styles.Modal}
       style={{
@@ -24,9 +24,9 @@ const shouldNotUpdate = (prevProps, nextProps) =>
   nextProps.children === prevProps.children;
 
 Modal.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   show: PropTypes.bool.isRequired,
-  cancel: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired,
 };
 
 export default React.memo(Modal, shouldNotUpdate);
