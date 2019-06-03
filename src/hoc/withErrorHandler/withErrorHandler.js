@@ -3,7 +3,7 @@ import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../Aux/Aux';
 
 const withErrorHandler = (WrappedComponent, Axios) =>
-  class extends Component {
+  class WithErrorHandler extends Component {
     state = {
       error: null,
     };
